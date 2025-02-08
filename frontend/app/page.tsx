@@ -23,7 +23,7 @@ const leagues = [
   { name: "Football", icon: "/icons/football.png" },
   {
     name: "Hockey",
-    icon: "/icons/hockey.svg",
+    icon: "/icons/hockey.png",
     subLeagues: ["NHL", "KHL", "OHL", "Liiga", "AHL"],
   },
   { name: "Basketball", icon: "/icons/basketball.png" },
