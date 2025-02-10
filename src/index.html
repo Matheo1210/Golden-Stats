@@ -1,151 +1,202 @@
-<div class="app">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Golden-Stats</title>
-        <link rel="stylesheet" href="styles/global.scss">
-    </head>
-    <header class="app-header">
-        <div class="app-header-logo">
-            <div class="logo">
-                <span class="logo-icon">
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogospng.org%2Fdownload%2Fnba%2Flogo-nba-4096.png&f=1&nofb=1&ipt=5d5e4812cc43514b6e8e76247075e42e3585081f8b39b12adcf7bdef609340f3&ipo=images"
-                        alt="Golden Stats Logo" />
-                </span>
-                <h1 class="logo-title">
-                    <span>Golden</span>
-                    <span>Stats</span>
-                </h1>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden-Stats</title>
+    <link rel="stylesheet" href="styles/global.scss" />
+</head>
+
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="app-header-logo">
+                <div class="logo">
+                    <span class="logo-icon">
+                        <img src="https://logospng.org/download/nba/logo-nba-4096.png" alt="Golden Stats Logo" />
+                    </span>
+                    <h1 class="logo-title">
+                        <span>Golden</span>
+                        <span>Stats</span>
+                    </h1>
+                </div>
             </div>
-        </div>
-        <div class="app-header-navigation">
-            <div class="tabs">
-                <a href="#">Soccer</a>
-                <a href="#" class="active">Basketball</a>
-                <a href="#">Football</a>
-                <a href="#">Hockey</a>
-                <a href="#">Tennis</a>
-                <a href="#">Volleyball</a>
+            <div class="app-header-navigation">
+                <div class="tabs">
+                    <a href="#">Soccer</a>
+                    <a href="#" class="active">Basketball</a>
+                    <a href="#">Football</a>
+                    <a href="#">Hockey</a>
+                    <a href="#">Tennis</a>
+                    <a href="#">Volleyball</a>
+                </div>
             </div>
-        </div>
-        <div class="app-header-actions">
-            <button class="user-profile">
-                <span>Matheo</span>
-                <span>
-                    <img src="/src/images/pp.png" alt="User Avatar" />
-                </span>
-            </button>
-            <div class="app-header-actions-buttons">
-                <button class="icon-button large">
-                    <i class="ph-magnifying-glass"></i>
+            <div class="app-header-actions">
+                <button class="user-profile">
+                    <span>Matheo</span>
+                    <span><img src="/src/images/pp.png" alt="User Avatar" /></span>
                 </button>
-                <button class="icon-button large">
-                    <i class="ph-bell"></i>
-                </button>
+                <div class="app-header-actions-buttons">
+                    <button class="icon-button large"><i class="ph-magnifying-glass"></i></button>
+                    <button class="icon-button large"><i class="ph-bell"></i></button>
+                </div>
+            </div>
+            <div class="app-header-mobile">
+                <button class="icon-button large"><i class="ph-list"></i></button>
+            </div>
+        </header>
+
+        <div class="app-body">
+            <div class="app-body-navigation">
+                <nav class="navigation">
+                    <a href="#"><i class="ph-browsers"></i><span>Stats</span></a>
+                    <a href="#"><i class="ph-users"></i><span>Teams</span></a>
+                    <a href="#"><i class="ph-swap"></i><span>Transfers</span></a>
+                </nav>
+                <footer class="footer">
+                    <h1>Golden-Stats<small>©</small></h1>
+                    <div>Golden-Stats © All Rights Reserved 2025</div>
+                </footer>
+            </div>
+
+            <div class="app-body-main-content">
+                <section class="service-section">
+                    <h2>Player Stats</h2>
+                    <div class="service-section-header">
+                        <div class="search-field">
+                            <i class="ph-magnifying-glass"></i>
+                            <input style="color: white;" type="text" placeholder="Search player name or team"
+                                id="playerSearch" />
+                        </div>
+                        <div class="dropdown-field">
+                            <select>
+                                <option>NBA</option>
+                                <option>EuroLeague</option>
+                            </select>
+                            <i class="ph-caret-down"></i>
+                        </div>
+                        <button class="flat-button" id="player-search-button">Search</button>
+                    </div>
+                    <div class="tiles" id="player-tiles"></div>
+                    <div class="service-section-footer">
+                        <p>Stats updated regularly during the season.</p>
+                    </div>
+                </section>
+                <section class="player-details-section" id="player-details" style="display: none;">
+                    <h2>Player Profile</h2>
+                    <button class="flat-button" onclick="hidePlayerProfile()">Retour</button>
+                    <div class="player-card">
+                        <div class="player-photo">
+                        </div>
+                        <div class="player-info">
+                            <h3 id="player-name"></h3>
+                            <p id="player-team"></p>
+                            <p id="player-position"></p>
+                            <p id="player-height"></p>
+                            <p id="player-weight"></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="transfer-section">
+                    <div class="transfer-section-header">
+                        <h2>Latest Transfers</h2>
+                        <div class="filter-options">
+                            <p>Filter selected: More than 100M $</p>
+                            <button class="icon-button"><i class="ph-funnel"></i></button>
+                            <button class="icon-button"><i class="ph-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="transfers">
+                        <div class="transfer">
+                            <div class="transfer-logo">
+                                <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png"
+                                    alt="Player Transfer" />
+                            </div>
+                            <dl class="transfer-details">
+                                <div>
+                                    <dt>LeBron James</dt>
+                                    <dd>From Cleveland Cavaliers</dd>
+                                </div>
+                                <div>
+                                    <dt>$85 million</dt>
+                                    <dd>Transfer Fee</dd>
+                                </div>
+                                <div>
+                                    <dt>2025-10-05</dt>
+                                    <dd>Transfer Date</dd>
+                                </div>
+                            </dl>
+                            <div class="transfer-number">- $ 85M</div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-        <div class="app-header-mobile">
-            <button class="icon-button large">
-                <i class="ph-list"></i>
-            </button>
-        </div>
-    </header>
-    <div class="app-body">
-        <div class="app-body-navigation">
-            <nav class="navigation">
-                <a href="#"><i class="ph-browsers"></i><span>Stats</span></a>
-                <a href="#"><i class="ph-users"></i><span>Teams</span></a>
-                <a href="#"><i class="ph-swap"></i><span>Transfers</span></a>
-            </nav>
-            <footer class="footer">
-                <h1>Golden-Stats<small>©</small></h1>
-                <div>Golden-Stats © All Rights Reserved 2025</div>
-            </footer>
-        </div>
+        <script type="module">
+            import { BalldontlieAPI } from "@balldontlie/sdk";
 
-        <div class="app-body-main-content">
-            <section class="service-section">
-                <h2>Player Stats</h2>
-                <div class="service-section-header">
-                    <div class="search-field">
-                        <i class="ph-magnifying-glass"></i>
-                        <input type="text" placeholder="Search player name or team" id="playerSearch" />
-                    </div>
-                    <div class="dropdown-field">
-                        <select>
-                            <option>NBA</option>
-                            <option>EuroLeague</option>
-                        </select>
-                        <i class="ph-caret-down"></i>
-                    </div>
-                    <button class="flat-button" id="player-search-button">Search</button>
-                </div>
-                <div class="mobile-only">
-                    <button class="flat-button">Toggle search</button>
-                </div>
-               <div class="tiles" id="player-tiles">
-                </div>
-                <div class="service-section-footer">
-                    <p>Stats updated regularly during the season.</p>
-                </div>
-            </section>
+            const api = new BalldontlieAPI({
+                apiKey: "e36f3fea-f428-482f-a986-bad13615e506",
+            });
+            function createPlayerTile(player) {
+                return `
+            <article class="tile" onclick="displayPlayerInfo('${player.first_name} ${player.last_name}', '${player.team}', '${player.position}', '${player.height_feet}', '${player.weight_pounds}')">
+              <div class="tile-header">
+                <h3>
+                  <span>${player.first_name} ${player.last_name}</span>
+                  <span>${player.team}</span>
+                </h3>
+              </div>
+              <button class="flat-button">View Profile</button>
+            </article>
+          `;
+            }
+            window.displayPlayerInfo = function (name, team, position, height, weight) {
+                const playerDetailsSection = document.getElementById("player-details");
 
-            <section class="transfer-section">
-                <div class="transfer-section-header">
-                    <h2>Latest Transfers</h2>
-                    <div class="filter-options">
-                        <p>Filter selected: More than 100M $</p>
-                        <button class="icon-button"><i class="ph-funnel"></i></button>
-                        <button class="icon-button"><i class="ph-plus"></i></button>
-                    </div>
-                </div>
-                <div class="transfers">
-                    <div class="transfer">
-                        <div class="transfer-logo">
-                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.nba.com%2Fheadshots%2Fnba%2Flatest%2F1040x760%2F2544.png&f=1&nofb=1&ipt=83f776b4c811d77fd48bdaa72539ccbd284c8837c969c64167a47bd21c53fdf5&ipo=images"
-                                alt="Player Transfer" />
-                        </div>
-                        <dl class="transfer-details">
-                            <div>
-                                <dt>LeBron James</dt>
-                                <dd>From Cleveland Cavaliers</dd>
-                            </div>
-                            <div>
-                                <dt>$85 million</dt>
-                                <dd>Transfer Fee</dd>
-                            </div>
-                            <div>
-                                <dt>2025-10-05</dt>
-                                <dd>Transfer Date</dd>
-                            </div>
-                        </dl>
-                        <div class="transfer-number">- $ 85M</div>
-                    </div>
-                    <div class="transfer">
-                        <div class="transfer-logo">
-                            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages6.fanpop.com%2Fimage%2Fphotos%2F40900000%2FGiannis-Antetokounmpo-giannis-antetokounmpo-40914875-960-1440.png&f=1&nofb=1&ipt=d69c6aa94be843955afa52a12b24445ac30f95d4f47bae5ac95c113b30a4a81a&ipo=images"
-                                alt="Player Transfer" />
-                        </div>
-                        <dl class="transfer-details">
-                            <div>
-                                <dt>Giannis Antetokounmpo</dt>
-                                <dd>From Milwaukee Bucks</dd>
-                            </div>
-                            <div>
-                                <dt>$120 million</dt>
-                                <dd>Transfer Fee</dd>
-                            </div>
-                            <div>
-                                <dt>2025-09-30</dt>
-                                <dd>Transfer Date</dd>
-                            </div>
-                        </dl>
-                        <div class="transfer-number">- $ 120M</div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <script src="profile.js" type="module"></script>
+                document.getElementById("player-name").textContent = name;
+                document.getElementById("player-team").textContent = "Équipe : " + team;
+                document.getElementById("player-position").textContent = "Poste : " + position;
+                document.getElementById("player-height").textContent = "Taille : " + height;
+                document.getElementById("player-weight").textContent = "Poids : " + weight;
+
+                playerDetailsSection.style.display = "block";
+            };
+            window.hidePlayerProfile = function () {
+                document.getElementById("player-details").style.display = "none";
+            };
+            function SearchPlayer() {
+                const playerSearch = document.getElementById("playerSearch");
+
+                api.nba
+                    .getPlayers({ per_page: 5, search: playerSearch.value })
+                    .then((response) => {
+                        const tilesContainer = document.getElementById("player-tiles");
+                        tilesContainer.innerHTML = "";
+
+                        response.data.forEach((player) => {
+                            tilesContainer.innerHTML += createPlayerTile({
+                                first_name: player.first_name,
+                                last_name: player.last_name,
+                                team: player.team.full_name,
+                                position: player.position || "N/A",
+                                height_feet: player.height_feet || "N/A",
+                                height_inches: player.height_inches || "",
+                                weight_pounds: player.weight_pounds || "N/A",
+                            });
+                        });
+                    })
+                    .catch((error) =>
+                        console.error("Error fetching player data:", error)
+                    );
+            }
+
+            document
+                .getElementById("player-search-button")
+                .addEventListener("click", SearchPlayer);
+        </script>
     </div>
-</div>
+</body>
+
+</html>
