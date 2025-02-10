@@ -240,6 +240,7 @@ a {
 
 .tabs {
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   color: var(--c-text-tertiary);
   border-bottom: 1px solid var(--c-gray-600);
