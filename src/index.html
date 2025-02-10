@@ -70,7 +70,7 @@
                 <div class="service-section-header">
                     <div class="search-field">
                         <i class="ph-magnifying-glass"></i>
-                        <input type="text" placeholder="Search player name or team" />
+                        <input type="text" placeholder="Search player name or team" id="playerSearch" />
                     </div>
                     <div class="dropdown-field">
                         <select>
@@ -79,45 +79,12 @@
                         </select>
                         <i class="ph-caret-down"></i>
                     </div>
-                    <button class="flat-button">Search</button>
+                    <button class="flat-button" id="player-search-button">Search</button>
                 </div>
                 <div class="mobile-only">
                     <button class="flat-button">Toggle search</button>
                 </div>
-                <div class="tiles">
-                    <article class="tile">
-                        <div class="tile-header">
-                            <h3><span>LeBron James</span><span>Los Angeles Lakers</span></h3>
-                        </div>
-                        <a href="#">
-                            <span>View Profile</span>
-                            <span class="icon-button">
-                                <i class="ph-caret-right-bold"></i>
-                            </span>
-                        </a>
-                    </article>
-                    <article class="tile">
-                        <div class="tile-header">
-                            <h3><span>Giannis Antetokounmpo</span><span>Milwaukee Bucks</span></h3>
-                        </div>
-                        <a href="#">
-                            <span>View Profile</span>
-                            <span class="icon-button">
-                                <i class="ph-caret-right-bold"></i>
-                            </span>
-                        </a>
-                    </article>
-                    <article class="tile">
-                        <div class="tile-header">
-                            <h3><span>Stephen Curry</span><span>Golden State Warriors</span></h3>
-                        </div>
-                        <a href="#">
-                            <span>View Profile</span>
-                            <span class="icon-button">
-                                <i class="ph-caret-right-bold"></i>
-                            </span>
-                        </a>
-                    </article>
+               <div class="tiles" id="player-tiles">
                 </div>
                 <div class="service-section-footer">
                     <p>Stats updated regularly during the season.</p>
@@ -179,5 +146,6 @@
                 </div>
             </section>
         </div>
+        <script src="profile.js" type="module"></script>
     </div>
 </div>
