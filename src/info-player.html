@@ -1,0 +1,96 @@
+<div class="app">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Golden-Stats - Player Info</title>
+        <link rel="stylesheet" href="styles/global.scss">
+    </head>
+
+    <header class="app-header">
+        <div class="app-header-logo">
+            <div class="logo">
+                <span class="logo-icon">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogospng.org%2Fdownload%2Fnba%2Flogo-nba-4096.png&f=1&nofb=1"
+                        alt="Golden Stats Logo" />
+                </span>
+                <h1 class="logo-title">
+                    <span>Golden</span>
+                    <span>Stats</span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="app-header-actions">
+            <button class="user-profile">
+                <span>Matheo</span>
+                <span>
+                    <img src="/src/images/pp.png" alt="User Avatar" />
+                </span>
+            </button>
+        </div>
+
+    </header>
+
+    <div class="app-body">
+        <div class="app-body-navigation">
+            <nav class="navigation">
+                <a href="#"><i class="ph-browsers"></i><span>Stats</span></a>
+                <a href="#"><i class="ph-users"></i><span>Teams</span></a>
+                <a href="#"><i class="ph-swap"></i><span>Transfers</span></a>
+            </nav>
+            <footer class="footer">
+                <h1>Golden-Stats<small>©</small></h1>
+                <div>Golden-Stats © All Rights Reserved 2025</div>
+            </footer>
+        </div>
+
+        <div class="app-body-main-content">
+            <section class="player-details-section">
+                <h2>Player Profile</h2>
+                <div class="player-card">
+                    <div class="player-photo">
+                        <img id="player-img" src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png"
+                            alt="Player Image">
+                    </div>
+                    <div class="player-info">
+                        <h3 id="player-name">LeBron James</h3>
+                        <p id="player-team">Team: Los Angeles Lakers</p>
+                        <p id="player-position">Position: Small Forward</p>
+                        <p id="player-age">Age: 39</p>
+                        <p id="player-height">Height: 6'9" (2.06m)</p>
+                        <p id="player-weight">Weight: 250 lbs (113 kg)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="player-stats-section">
+                <h2>Season Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" id="player-ppg">27.2</span>
+                        <span class="stat-label">Points Per Game</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="player-apg">7.5</span>
+                        <span class="stat-label">Assists Per Game</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="player-rpg">8.1</span>
+                        <span class="stat-label">Rebounds Per Game</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="player-spg">1.2</span>
+                        <span class="stat-label">Steals Per Game</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="player-bpg">0.9</span>
+                        <span class="stat-label">Blocks Per Game</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="player.js" type="module"></script>
+    </div>
+</div>
