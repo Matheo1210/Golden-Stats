@@ -98,6 +98,10 @@
                             <p id="player-position"></p>
                             <p id="player-height"></p>
                             <p id="player-weight"></p>
+                            <p id="player-jersey_number"></p>
+                            <p id="player-college"></p>
+                            <p id="player-country"></p>
+                            <p id="player-draft_year"></p>
                         </div>
                     </div>
                 </section>
@@ -144,7 +148,15 @@
             });
             function createPlayerTile(player) {
                 return `
-            <article class="tile" onclick="displayPlayerInfo('${player.first_name} ${player.last_name}', '${player.team}', '${player.position}', '${player.height_feet}', '${player.weight_pounds}')">
+            <article class="tile" onclick="displayPlayerInfo('${player.first_name} ${player.last_name}',
+             '${player.team}',
+              '${player.position}',
+               '${player.height}',
+               '${player.weight}',
+               '${player.jersey_number}',
+               '${player.college}',
+               '${player.country}',
+               '${player.draft_year}')">
               <div class="tile-header">
                 <h3>
                   <span>${player.first_name} ${player.last_name}</span>
@@ -155,7 +167,7 @@
             </article>
           `;
             }
-            window.displayPlayerInfo = function (name, team, position, height, weight) {
+            window.displayPlayerInfo = function (name, team, position, height, weight, jersey_number, college, country, draft_year) {
                 const playerDetailsSection = document.getElementById("player-details");
 
                 document.getElementById("player-name").textContent = name;
@@ -163,6 +175,10 @@
                 document.getElementById("player-position").textContent = "Poste : " + position;
                 document.getElementById("player-height").textContent = "Taille : " + height;
                 document.getElementById("player-weight").textContent = "Poids : " + weight;
+                document.getElementById("player-jersey_number").textContent = "Numéro : " + jersey_number;
+                document.getElementById("player-college").textContent = "Université : " + college;
+                document.getElementById("player-country").textContent = "Pays : " + country;
+                document.getElementById("player-draft_year").textContent = "Année de draft : " + draft_year;
 
                 playerDetailsSection.style.display = "block";
             };
@@ -179,14 +195,25 @@
                         tilesContainer.innerHTML = "";
 
                         response.data.forEach((player) => {
+                            /*api.nba.getPlayer(player.id).then((playerDetails) => {
+                                height = playerDetails.data.height;
+                                weight = playerDetails.data.weight;
+                                jersey_number = playerDetails.data.jersey_number;
+                                college = playerDetails.data.college;
+                                country = playerDetails.data.country;
+                                draft_year = playerDetails.data.draft_year;
+                            });*/
                             tilesContainer.innerHTML += createPlayerTile({
                                 first_name: player.first_name,
                                 last_name: player.last_name,
+                                position: player.position,
                                 team: player.team.full_name,
-                                position: player.position || "N/A",
-                                height_feet: player.height_feet || "N/A",
-                                height_inches: player.height_inches || "",
-                                weight_pounds: player.weight_pounds || "N/A",
+                                height: player.height,
+                                weight: player.weight,
+                                jersey_number: player.jersey_number,
+                                college: player.college,
+                                country: player.country,
+                                draft_year: player.draft_year,
                             });
                         });
                     })
